@@ -36,6 +36,7 @@ class OnlinerInformer():
     def post_message(self, message):
         message = quote_plus(message + "\r\n"+ self.forumBaseUrl+self.forumEndUrl)
         clientRequest = requests.request(method="GET", url=self.telegramBaseUrl + "/sendMessage?chat_id=130671039&text=" + message)
+        clientRequest = requests.request(method="GET", url=self.telegramBaseUrl + "/sendMessage?chat_id=79694492&text=" + message)
         return clientRequest.status_code
 
     def is_post_new(self, post):
